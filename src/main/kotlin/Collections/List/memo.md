@@ -70,4 +70,38 @@ Listは読み取り専用のため、書き込みはできない。
 - associateWithTo
   - 要素をキーに、ラムダの結果をvalueに入れたMapを作り、引数に指定したMapに入れる。
 - binarySearch
-  - 指定した要素のインデックスを返返す。
+  - 指定した要素を二分探索アルゴリズムを使用して検索し、インデックスを返返す。
+  - 実行にはリストがソートされている必要がある。
+- chunked
+  - リストを指定した数で区切ったリストに返す。
+- count
+  - 条件を満たした要素の数を返す。
+- distinct
+  - 要素の重複を削除したリストを返す。
+- drop
+  - 指定された数除外したリストを返す。
+- dropLast
+  - 後ろから指定された数除外したリストを返す。
+- dropWhile
+  - 指定した条件全てを除外したリストを返す。
+- dropLastWhile
+  - 後ろから指定した条件全てを除外したリストを返す。
+- elementAt
+  - 指定したインデックスの要素を返す。
+  - 範囲外のインデックスを指定した場合はIndexOutOfBoundsExceptionが投げられる。
+- elementAtOrElse
+  - インデックスが範囲外の場合に返す値を指定できる。
+- elementAtOrNull
+  - インデックスが範囲外の場合はNullを返す。
+- filter
+  - 指定された条件を満たす要素をリストで返す。
+- filterIndexed
+  - index付きのfilter。
+- filterIndexedTo
+  - 返却値を引数のListに入れる。
+- filterIsInstance
+  - 条件がクラス。
+- filterNot
+  - 条件に該当しない要素をリストで返す。
+- filterNotNull
+  - nullを除外したリストを返す。

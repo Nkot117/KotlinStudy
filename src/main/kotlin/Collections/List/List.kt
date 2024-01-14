@@ -78,4 +78,43 @@ fun main() {
     val associateWithMap = mutableMapOf<Int, Int>()
     list.associateWithTo(associateWithMap) { it * 100 }
     println("associateWithTo=${associateWithMap}")
+
+    // binarySearch
+    println("binarySearch=${list.binarySearch(2)}")
+    // 検索範囲も指定できる
+    println("binarySearch=${list.binarySearch(element = 2, fromIndex = 0, toIndex = 2)}")
+
+    // chunked
+    println("chunked=${list.chunked(2)}")
+
+    // count
+    println("count=${list.count { it > 4 }}")
+
+    // distinct
+    val distinctList = listOf(1, 1, 2, 3, 4, 4, 4, 5, 6)
+    println("distinct=${distinctList.distinct()}")
+    // 重複とみなす条件も指定できる
+    // ５以上と以下で分けて、重複を削除したリスト
+    println("distinct=${distinctList.distinctBy { it < 5 }}")
+
+    // drop
+    println("drop=${list.drop(2)}")
+    println("dropWhile=${list.dropWhile { it < 5 }}")
+    println("dropLastWhile=${list.dropLastWhile { it > 5 }}")
+
+    // elementAt
+    println("elementAt=${list.elementAt(2)}")
+    println("elementAtOrElse=${list.elementAtOrElse(100) { "範囲外" }}")
+    println("elementAtOrNull=${list.elementAtOrNull(100)}")
+
+    // filter
+    println("filter${list.filter { it % 2 == 0 }}")
+    println("filterIndexed${list.filterIndexed { index, i -> i % 2 == 0 && index < 5 }}")
+
+    // filterIsInstance
+    val mixList = listOf("1", 2, 3, "4", 5)
+    println("filterIsInstance=${mixList.filterIsInstance(String::class.java)}")
+
+    // filterNot
+    println("filterNot=${list.filterNot { it < 5 }}")
 }
