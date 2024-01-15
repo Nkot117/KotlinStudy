@@ -117,4 +117,16 @@ fun main() {
 
     // filterNot
     println("filterNot=${list.filterNot { it < 5 }}")
+
+    // find
+    println("find=${list.find { it % 2 == 0 }}")
+
+    // findLast
+    println("findLast=${list.findLast { it % 2 == 0 }}")
+
+    // first
+    println("first=${list.first { it % 2 != 0 }}")
+
+    // firstOrNull
+    println("firstOrNull=${list.firstOrNull { it % 99 == 0 }}")
 }
