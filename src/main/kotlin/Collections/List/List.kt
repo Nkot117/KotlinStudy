@@ -1,5 +1,7 @@
 package org.example.Collections.List
 
+import java.util.*
+
 fun main() {
     val list = listOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
 
@@ -129,4 +131,52 @@ fun main() {
 
     // firstOrNull
     println("firstOrNull=${list.firstOrNull { it % 99 == 0 }}")
+
+    // flatten
+    val flatList = listOf(listOf("a", "b"), listOf("c", "d"))
+    println("flatten=${flatList.flatten()}")
+
+    // flatMap
+    println("flatMap=${flatList.flatMap { it.map { item -> item.uppercase(Locale.getDefault()) } }}")
+
+    // fold
+    println("fold=${list.fold("X") { initial, value -> initial + value }}")
+
+    // foldRight
+    println("foldRight=${list.foldRight("X") { value, initial -> initial + value }}")
+
+    // forEach
+    print("forEach=")
+    list.forEach { print(it) }
+
+    // groupBy
+    println("groupBy${list.groupBy({ if (it % 2 == 0) "偶数" else "奇数" }, { it })}")
+
+    // joinToString
+    println(
+        "joinToString=${
+            list.joinToString(
+                separator = "/",
+                prefix = "#",
+                postfix = "$",
+                transform = { "${it * 10}" })
+        }"
+    )
+
+    // map
+    println("map=${list.map { it * 10 }}")
+
+    // mapNotNull
+    val nullList = listOf("1", null, "3", "4", null)
+    println("mapNotNll=${nullList.mapNotNull { if (it != null) it.toInt() * 10 else null }}")
+
+    // maxBy
+    println("maxBy=${list.maxBy { it }}")
+
+    // minBy
+    println("minBy=${list.minBy { it }}")
+
+    // partition
+    println("partition=${list.partition { it % 2 == 0 }}")
 }
+
