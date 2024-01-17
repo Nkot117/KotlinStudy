@@ -162,3 +162,46 @@ Listは読み取り専用のため、書き込みはできない。
   - 指定した条件に該当する要素がなければtrueを返す
 - partition
   - 指定した条件でture、falseでリスト分割する
+- reduce
+  - ラムダ式で指定した処理を、前回の処理結果を踏まえて実行する。
+- requireNoNulls
+  - リストにNullがないか確認する。
+  - Nullある場合はIllegalArgumentExceptionがスローされる。
+- single
+  - リストに重複がない要素が返される。
+  - 要素が存在しない、重複する要素しかない場合はIllegalArgumentExceptionが発生する。
+- singleOrNull
+  - エラーの代わりにNullを返す。
+- slice
+  - 引数で指定した範囲で切り取ったリストを返す。
+- sorted
+  - リストを昇順にソートする
+- sortedDescending
+  - リストを降順にソートする
+- sortBy
+  - ソート方法をラムダ式で指定
+- sortedWith
+  - ソート方法をComparatorで指定
+- subtract
+  - 引数で指定した要素にはない要素のみのリストを返す。
+- sum
+  - 合計値を返す
+- sumOf
+  - 要素を変更して合計値を返す
+- take
+  - 指定した数だけ要素を返す
+- takeLast
+  - 指定した数だけ後ろから要素を返す
+- takeWhile
+  - 条件を満たすまで要素を返す
+- union
+  - ２つのリストを合計して、重複を除いた要素をSetで返す
+- unzip
+  - リスト内のPairのキーと値を分けて集めて返す
+- windowed
+  - 指定したサイズ、間隔でリストを分割する
+- zip
+  - リスト同士をPairにまとめて一つにする
+  - 先頭から処理していき、不足した要素は無視される
+- zipWithNext
+  - 次の要素とのPairを作って返す

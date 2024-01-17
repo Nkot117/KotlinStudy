@@ -178,5 +178,57 @@ fun main() {
 
     // partition
     println("partition=${list.partition { it % 2 == 0 }}")
+
+    // reduce
+    println(
+        "reduce=${
+            list.reduce { acc, i ->
+                acc + i
+            }
+        }"
+    )
+
+    // single
+    println("single=${list.single { it == 3 }}")
+
+    // slice
+    println("slice=${list.slice(0..2)}")
+
+    // sortedDescending
+    println("sortedDescending=${list.sortedDescending()}")
+
+    // subtract
+    println("subtract=${list.subtract(listOf(2, 5))}")
+
+    // sum
+    println("sum=${list.sum()}")
+
+    // sumBy
+    println(
+        "sumBy=${
+            list.sumOf { it * 10 }
+        }"
+    )
+
+    // takeWhile
+    println("takeWhile=${list.takeWhile { it < 5 }}")
+
+    // union
+    val unionList = listOf(2, 3, 4, 5, 68, 99)
+    println("union=${list.union(unionList)}")
+
+    // unzip
+    val pairList = listOf(Pair(1, "a"), Pair(2, "b"), Pair(3, "c"))
+    println("unzip=${pairList.unzip()}")
+
+    // windowed
+    println("windowed=${list.windowed(2, 2)}")
+
+    // zip
+    val zipList = listOf("a", "b", "c")
+    println("zip=${list.zip(zipList)}")
+
+    // zipWithNext
+    println("zipWithNext=${list.zipWithNext()}")
 }
 
