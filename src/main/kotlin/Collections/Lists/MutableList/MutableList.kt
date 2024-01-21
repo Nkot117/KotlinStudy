@@ -1,4 +1,4 @@
-package org.example.Collections.MutableList
+package org.example.Collections.Lists.MutableList
 
 private val mutableList = mutableListOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
 
@@ -53,5 +53,5 @@ fun init() {
 }
 
 fun check(str: String){
-    println("${str}=${mutableList}")
+    println("${str}=$mutableList")
 }

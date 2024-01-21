@@ -1,4 +1,4 @@
-package org.example.Collections.List
+package org.example.Collections.Lists.List
 
 import java.util.*
 
